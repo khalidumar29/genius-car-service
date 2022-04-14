@@ -1,20 +1,19 @@
-.services-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+
+.services-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
 }
-.services-title {
-  text-align: center;
-  color: rgba(113, 113, 236, 0.716);
+
+/* make services responsive */
+@media only screen and (max-width:576px) {
+    .services-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
-/* make sevices responsive */
-@media only screen and (max-width: 576px) {
-  .services-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
+
 @media only screen and (min-width: 577px) and (max-width: 992px) {
-  .services-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .services-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
