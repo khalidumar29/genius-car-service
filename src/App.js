@@ -8,7 +8,7 @@ import Home from "./Pages/Home/Home/Home";
 import Login from "./Pages/Login/Login/Login";
 import Register from "./Pages/Login/Register/Register";
 import RequireAuth from "./Pages/Login/RequireAuth/RequireAuth";
-import ManageService from "./Pages/ManageService/ManageService";
+import ManageService from "./Pages/ManageServices/ManageServices";
 import Order from "./Pages/Order/Order";
 import ServiceDetail from "./Pages/ServiceDetail/ServiceDetail";
 import Footer from "./Pages/Shared/Footer/Footer";

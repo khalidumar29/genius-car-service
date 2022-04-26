@@ -1,10 +1,11 @@
 import React from "react";
-import useServices from "../../Hooks/UseServices";
+import useServices from "../../hooks/UseServices";
 
-const ManageService = () => {
+const ManageServices = () => {
   const [services, setServices] = useServices();
-  const handledelete = (id) => {
-    const proceed = window.confirm("you confirm to delete this service");
+
+  const handleDelete = (id) => {
+    const proceed = window.confirm("Are you sure?");
     if (proceed) {
       const url = `http://localhost:5000/service/${id}`;
       fetch(url, {
@@ -12,19 +13,20 @@ const ManageService = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          const remaining = services.filter((service) => service.id !== id);
+          console.log(data);
+          const remaining = services.filter((service) => service._id !== id);
           setServices(remaining);
         });
     }
   };
   return (
     <div className='w-50 mx-auto'>
-      <h2>manege your services</h2>
+      <h2>Manage your services</h2>
       {services.map((service) => (
         <div key={service._id}>
           <h5>
             {service.name}{" "}
-            <button onClick={() => handledelete(service._id)}>X</button>
+            <button onClick={() => handleDelete(service._id)}>X</button>
           </h5>
         </div>
       ))}
@@ -32,4 +34,4 @@ const ManageService = () => {
   );
 };
 
-export default ManageService;
+export default ManageServices;
